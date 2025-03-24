@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.bx-menu {
+    @media (width >= 40rem /* 640px */) {
+        display: block;
+    }
+    @media (width >= 48rem /* 768px */) {
+        display: none;
+    }
+}
