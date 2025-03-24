@@ -25,10 +25,10 @@ function App() {
 
   return (
     <>
-      <div className="w-full h-full absolute">
+      <div className="w-full h-full absolute bg-zinc-800">
         {/*header*/}  
         <div id="header">
-          <header className="flex justify-between items-center text-gray-900 py-6 px-8 md:px-16 bg-white drop-shadow-md">
+          <header className="flex justify-between items-center text-gray-900 py-6 px-8 md:px-16 bg-slate-50 drop-shadow-md">
             <a href="#">
               <img
                 src={logo}
@@ -81,7 +81,7 @@ function App() {
         </div>
 
         {/*main section*/}
-        <main className="flex ml-10 mt-20 mr-10">
+        <main className="flex ml-10 mt-20 mr-10 ">
           {/*left side*/}
           <div id="left-side" className="bg-slate-800 text-white">
             {/*slider*/}
