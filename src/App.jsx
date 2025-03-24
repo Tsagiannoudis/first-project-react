@@ -20,6 +20,7 @@ function App() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
+    arrows: false,
   };
 
   return (
@@ -80,9 +81,9 @@ function App() {
         </div>
 
         {/*main section*/}
-        <main>
+        <main className="flex ml-10 mt-20 mr-10">
           {/*left side*/}
-          <div id="left-side" className="ml-10 mt-20">
+          <div id="left-side" className="bg-slate-800 text-white">
             {/*slider*/}
             <div className="w-100 h-100">
               <Slider {...settings}>
@@ -93,18 +94,25 @@ function App() {
                 ))}
               </Slider>
             </div>
-            {/*left logo*/}
-            <div className="-mt-0">
+            {/*logo*/}
+            <div className="-mt-0 relative">
               <img
                 src={profile}
                 alt=""
                 className="w-35 h-35 ml-30 rounded-full outline-offset-0 border-1 bg-white -mt-20"
               />
             </div>
+            {/*bottom div*/}
+            <div className="text-wrap whitespace-normal text-center mb-30 mt-3">
+              <h1>Ioakeim Tsagiannoudis</h1>
+              <span>FrontEnd Developer</span>
+            </div>
           </div>
 
           {/*right side*/}
-          <div id="right-side"></div>
+          <div id="right-side flex" className="bg-blue-800 color">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, voluptates vitae voluptatibus hic sapiente rerum dolor ad architecto tempore distinctio et quisquam. Quae dolor adipisci labore veritatis at ullam veniam.
+          </div>
         </main>
       </div>
     </>
