@@ -25,17 +25,14 @@ function App() {
 
   return (
     <>
-      <div className="w-full h-full absolute bg-zinc-800">
-
+      <div className="w-full h-full absolute bg-zinc-600">
         {/*main section*/}
-        <main className="flex ml-10 mt-20 mr-10">
-
+        <main className="flex  mt-50 max-w-[1140px] mx-auto">
           {/*header*/}
           <div id="header">
-            <header className="mt-5">
-
+            <header className="">
               {/*menu for big screens*/}
-              <ul className="gap-12 text-base bg-slate-800 text-white py-3">
+              <ul className="gap-12 text-base bg-slate-800 text-white py-3 rounded-l-lg">
                 <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
                   Home
                 </li>
@@ -78,14 +75,20 @@ function App() {
           </div>
 
           {/*left side box*/}
-          <div id="left-side" className="bg-slate-800 text-white">
-
+          <div
+            id="left-side"
+            className="bg-slate-800 text-white -mt-5 -mb-10 rounded-b-lg rounded-t-lg"
+          >
             {/*slider with images*/}
             <div className="w-100 h-100">
               <Slider {...settings}>
                 {images.map((image, index) => (
                   <div key={index}>
-                    <img src={image} alt="" className="w-100 h-100" />
+                    <img
+                      src={image}
+                      alt=""
+                      className="w-100 h-100 rounded-t-lg"
+                    />
                   </div>
                 ))}
               </Slider>
@@ -111,11 +114,21 @@ function App() {
           </div>
 
           {/*right side box*/}
-          <div id="right-side flex" className="bg-blue-800 color">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-            voluptates vitae voluptatibus hic sapiente rerum dolor ad architecto
-            tempore distinctio et quisquam. Quae dolor adipisci labore veritatis
-            at ullam veniam.
+          <div
+            id="right-side flex"
+            className="bg-slate-800 text-white color p-8 max-h-[600px] overflow-y-auto" style={{ height: "600px" }}
+          >
+            <p>
+              Γεια σας! Είμαι ο Ιωακείμ Τσαγιαννούδης και διαθέτω γνώση στην
+              κατασκευή ιστοσελίδων σε WordPress και PrestaShop μορφής.
+              Αναλαμβάνω την κατασκευή ή αναδιαμόρφωση για την βελτίωση της
+              ιστοσελίδας σας σε μορφή WordPress ή PrestaShop για την ψηφιακή
+              επαγγελματική ή προσωπική προβολή στο διαδίκτυο. Η ιστοσελίδα σας
+              θα εμφανίζεται άψογα σε κινητά και τάμπλετ. Μαζί με την ιστοσελίδα
+              σας μπορείτε να διαθέτετε υπηρεσίες όπως επαγγελματικά email(πχ
+              info@pap.gr), ssl προτόκολο ασφάλειας, δημιουργία αντιγράφων
+              ασφαλείας όσο και την φιλοξενία στο server(Hosting).
+            </p> 
           </div>
         </main>
       </div>
