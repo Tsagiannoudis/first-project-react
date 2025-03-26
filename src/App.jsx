@@ -37,7 +37,7 @@ function App() {
               <ul className="min-w-30 gap-12 text-base bg-slate-800 text-white py-3 rounded-l-lg">
                 <li
                   className="p-1 hover:bg-amber-600 text hover:text-white rounded-md transition-all cursor-pointer px-6"
-                  onClick={() => setActiveContect("About")}
+                  onClick={() => setActiveContect("About me")}
                 >
                   About Me
                 </li>
@@ -64,13 +64,16 @@ function App() {
               {isMenuOpen && (
                 <div className="absolute top-32 left-0 w-full bg-white drop-shadow-md md:hidden">
                   <ul className="flex flex-col items-center gap-4 py-4">
-                    <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
+                    <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6"
+                    onClick={() => setActiveContect("About me")}>
                       About Me
                     </li>
-                    <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
+                    <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6"
+                    onClick={() => setActiveContect("Portfolio")}>
                       Portfolio
                     </li>
-                    <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
+                    <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6"
+                    onClick={() => setActiveContect("Contact")}>
                       Contact
                     </li>
                   </ul>

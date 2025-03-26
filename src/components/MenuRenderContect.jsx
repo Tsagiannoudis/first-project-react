@@ -15,7 +15,7 @@ function MenuRenderContect({ activeContect }) {
       case "Contact":
         return <div>Contact</div>;
       default:
-        return <div>home</div>;
+        return <div>About me</div>;
     }
   };
   return <div>{renderContect()}</div>;
