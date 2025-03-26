@@ -26,65 +26,61 @@ function App() {
   return (
     <>
       <div className="w-full h-full absolute bg-zinc-800">
-        {/*header*/}  
-        <div id="header">
-          <header className="flex justify-between items-center text-gray-900 py-6 px-8 md:px-16 bg-slate-50 drop-shadow-md">
-            <a href="#">
-              <img
-                src={logo}
-                alt=""
-                className="w-26 h-26 hover:scale-105 transition-all"
-              />
-            </a>
-
-            {/*menu for big screens*/}
-            <ul className="hidden md:flex items-center gap-12 text-base">
-              <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
-                Home
-              </li>
-              <li className="p-1 hover:bg-amber-600 text hover:text-white rounded-md transition-all cursor-pointer px-6">
-                About
-              </li>
-              <li className="p-1 hover:bg-amber-600 text hover:text-white rounded-md transition-all cursor-pointer px-6">
-                Portfolio
-              </li>
-              <li className="p-1 hover:bg-amber-600 text hover:text-white rounded-md transition-all cursor-pointer px-6">
-                Contact
-              </li>
-            </ul>
-
-            {/*menu for small screens*/}
-            <i
-              className="bx bx-menu block text-4xl cursor-pointer"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            ></i>
-
-            {isMenuOpen && (
-              <div className="absolute top-32 left-0 w-full bg-white drop-shadow-md md:hidden">
-                <ul className="flex flex-col items-center gap-4 py-4">
-                  <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
-                    Home
-                  </li>
-                  <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
-                    About
-                  </li>
-                  <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
-                    Portfolio
-                  </li>
-                  <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
-                    Contact
-                  </li>
-                </ul>
-              </div>
-            )}
-          </header>
-        </div>
 
         {/*main section*/}
-        <main className="flex ml-10 mt-20 mr-10 ">
-          {/*left side*/}
+        <main className="flex ml-10 mt-20 mr-10">
+
+          {/*header*/}
+          <div id="header">
+            <header className="mt-5">
+
+              {/*menu for big screens*/}
+              <ul className="gap-12 text-base bg-slate-800 text-white py-3">
+                <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
+                  Home
+                </li>
+                <li className="p-1 hover:bg-amber-600 text hover:text-white rounded-md transition-all cursor-pointer px-6">
+                  About
+                </li>
+                <li className="p-1 hover:bg-amber-600 text hover:text-white rounded-md transition-all cursor-pointer px-6">
+                  Portfolio
+                </li>
+                <li className="p-1 hover:bg-amber-600 text hover:text-white rounded-md transition-all cursor-pointer px-6">
+                  Contact
+                </li>
+              </ul>
+
+              {/*menu for small screens*/}
+              <i
+                className="bx bx-menu block text-4xl cursor-pointer"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              ></i>
+
+              {isMenuOpen && (
+                <div className="absolute top-32 left-0 w-full bg-white drop-shadow-md md:hidden">
+                  <ul className="flex flex-col items-center gap-4 py-4">
+                    <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
+                      Home
+                    </li>
+                    <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
+                      About
+                    </li>
+                    <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
+                      Portfolio
+                    </li>
+                    <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
+                      Contact
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </header>
+          </div>
+
+          {/*left side box*/}
           <div id="left-side" className="bg-slate-800 text-white">
-            {/*slider*/}
+
+            {/*slider with images*/}
             <div className="w-100 h-100">
               <Slider {...settings}>
                 {images.map((image, index) => (
@@ -95,11 +91,16 @@ function App() {
               </Slider>
             </div>
             {/*logo*/}
-            <div className="-mt-0 relative">
+            <div className="relative group">
+              <img
+                src={logo}
+                alt=""
+                className="w-35 h-35 ml-30 rounded-full outline-offset-0 border-1 bg-white -mt-20 group-hover:opacity-0 transition-opacity duration-300"
+              />
               <img
                 src={profile}
                 alt=""
-                className="w-35 h-35 ml-30 rounded-full outline-offset-0 border-1 bg-white -mt-20"
+                className="w-35 h-35 ml-30 rounded-full outline-offset-0 border-1 bg-white absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               />
             </div>
             {/*bottom div*/}
@@ -109,9 +110,12 @@ function App() {
             </div>
           </div>
 
-          {/*right side*/}
+          {/*right side box*/}
           <div id="right-side flex" className="bg-blue-800 color">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, voluptates vitae voluptatibus hic sapiente rerum dolor ad architecto tempore distinctio et quisquam. Quae dolor adipisci labore veritatis at ullam veniam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+            voluptates vitae voluptatibus hic sapiente rerum dolor ad architecto
+            tempore distinctio et quisquam. Quae dolor adipisci labore veritatis
+            at ullam veniam.
           </div>
         </main>
       </div>
