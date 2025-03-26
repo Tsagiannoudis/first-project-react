@@ -7,11 +7,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import photoslider1 from "./assets/photoslider-1.jpg";
 import photoslider2 from "./assets/photoslider-2.jpg";
+import MenuRenderContect from "./components/MenuRenderContect";
 
 const images = [photoslider1, photoslider2];
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeContect, setActiveContect] = useState("About me");
 
   const settings = {
     infinite: true,
@@ -32,17 +34,23 @@ function App() {
           <div id="header">
             <header className="">
               {/*menu for big screens*/}
-              <ul className="gap-12 text-base bg-slate-800 text-white py-3 rounded-l-lg">
-                <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
-                  Home
+              <ul className="min-w-30 gap-12 text-base bg-slate-800 text-white py-3 rounded-l-lg">
+                <li
+                  className="p-1 hover:bg-amber-600 text hover:text-white rounded-md transition-all cursor-pointer px-6"
+                  onClick={() => setActiveContect("About")}
+                >
+                  About Me
                 </li>
-                <li className="p-1 hover:bg-amber-600 text hover:text-white rounded-md transition-all cursor-pointer px-6">
-                  About
-                </li>
-                <li className="p-1 hover:bg-amber-600 text hover:text-white rounded-md transition-all cursor-pointer px-6">
+                <li
+                  className="p-1 hover:bg-amber-600 text hover:text-white rounded-md transition-all cursor-pointer px-6"
+                  onClick={() => setActiveContect("Portfolio")}
+                >
                   Portfolio
                 </li>
-                <li className="p-1 hover:bg-amber-600 text hover:text-white rounded-md transition-all cursor-pointer px-6">
+                <li
+                  className="p-1 hover:bg-amber-600 text hover:text-white rounded-md transition-all cursor-pointer px-6"
+                  onClick={() => setActiveContect("Contact")}
+                >
                   Contact
                 </li>
               </ul>
@@ -57,10 +65,7 @@ function App() {
                 <div className="absolute top-32 left-0 w-full bg-white drop-shadow-md md:hidden">
                   <ul className="flex flex-col items-center gap-4 py-4">
                     <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
-                      Home
-                    </li>
-                    <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
-                      About
+                      About Me
                     </li>
                     <li className="p-1 hover:bg-blue-900 text hover:text-white rounded-md transition-all cursor-pointer px-6">
                       Portfolio
@@ -116,19 +121,10 @@ function App() {
           {/*right side box*/}
           <div
             id="right-side flex"
-            className="bg-slate-800 text-white color p-8 max-h-[600px] overflow-y-auto" style={{ height: "600px" }}
+            className="bg-slate-800 text-white color p-8 max-h-[600px] overflow-y-auto"
+            style={{ height: "600px" }}
           >
-            <p>
-              Γεια σας! Είμαι ο Ιωακείμ Τσαγιαννούδης και διαθέτω γνώση στην
-              κατασκευή ιστοσελίδων σε WordPress και PrestaShop μορφής.
-              Αναλαμβάνω την κατασκευή ή αναδιαμόρφωση για την βελτίωση της
-              ιστοσελίδας σας σε μορφή WordPress ή PrestaShop για την ψηφιακή
-              επαγγελματική ή προσωπική προβολή στο διαδίκτυο. Η ιστοσελίδα σας
-              θα εμφανίζεται άψογα σε κινητά και τάμπλετ. Μαζί με την ιστοσελίδα
-              σας μπορείτε να διαθέτετε υπηρεσίες όπως επαγγελματικά email(πχ
-              info@pap.gr), ssl προτόκολο ασφάλειας, δημιουργία αντιγράφων
-              ασφαλείας όσο και την φιλοξενία στο server(Hosting).
-            </p> 
+            <MenuRenderContect activeContect={activeContect} />
           </div>
         </main>
       </div>
